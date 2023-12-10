@@ -4,7 +4,7 @@ using System;
 
 namespace Polygons
 {
-    public class Triangle : Polygon
+    public abstract class Triangle : Polygon
     {
         private double[] sideLengths = new double[3];
 
@@ -20,29 +20,8 @@ namespace Polygons
             sideLengths[2] = s3;
         }
 
-        public static Triangle CreateTriangle(double s1, double s2, double s3)
-        {
-            if (s1 == s2 && s2 == s3)
-            {
-                return new EquilateralTriangle(s1);
-            }
-            else if (s1 == s3) {
-                return new IsoscelesTriangle(legs:s1, baseLength:s2);
-            }
-            else if (s2 == s3) {
-                return new IsoscelesTriangle(legs: s2, baseLength: s1);
-            }
-            else if (s1 == s2)
-            {
-                return new IsoscelesTriangle(legs: s1, baseLength: s3);
-            }
-            else
-            {
-                return new Triangle(s1, s2, s3);
-            }
-        }
         public override double Perimeter => sideLengths[0] + sideLengths[1] + sideLengths[2];
-        public override double Area //Heron's Formula
+        public sealed override double Area //Heron's Formula
         {
             get
             {
@@ -51,7 +30,11 @@ namespace Polygons
             }
         }
 
+    }
 
+    public class ScaleneTriangle : Triangle
+    {
+        public ScaleneTriangle(double s1, double s2, double s3) : base(s1, s2, s3, false) { }
     }
 
 }
