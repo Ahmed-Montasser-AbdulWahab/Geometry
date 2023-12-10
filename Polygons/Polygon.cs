@@ -28,12 +28,12 @@
 
 
 
-        Polygon(int numberOfSides, bool isRegular)
+        public Polygon(int numberOfSides, bool isRegular)
         {
             _numberOfSides = numberOfSides;
             _isRegular = isRegular;
         }
-        Polygon(int numberOfSides): this(numberOfSides, true)
+        public Polygon(int numberOfSides): this(numberOfSides, true)
         {
 
         }
