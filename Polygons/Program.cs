@@ -6,6 +6,7 @@ namespace Polygons
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }
