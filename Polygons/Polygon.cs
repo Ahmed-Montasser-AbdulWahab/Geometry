@@ -37,5 +37,14 @@
         {
 
         }
+
+        public double CalculateTotalAngle()
+        {
+            return (_numberOfSides - 2) * 180.0;
+        }
+        public double CalculateRegularAngle()
+        {
+            return (_isRegular)? CalculateTotalAngle() : -1 ;
+        }
     }
 }
