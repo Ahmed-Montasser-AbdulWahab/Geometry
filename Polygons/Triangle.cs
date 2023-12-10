@@ -9,13 +9,7 @@ namespace Polygons
         private double[] sideLengths = new double[3];
 
 
-        protected Triangle(double s1, double s2, double s3, bool isRegular) : base(3, isRegular)
-        {
-            sideLengths[0] = s1;
-            sideLengths[1] = s2;
-            sideLengths[2] = s3;
-        }
-        public Triangle(double s1, double s2, double s3) : base(3, false)
+        protected Triangle(double s1, double s2, double s3, bool isRegular = false) : base(3, isRegular)
         {
             sideLengths[0] = s1;
             sideLengths[1] = s2;
