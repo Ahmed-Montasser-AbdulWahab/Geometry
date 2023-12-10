@@ -1,6 +1,6 @@
 ﻿namespace Polygons
 {
-    public class Square : Polygon
+    public sealed class Square : Polygon
     {
         private double _sideLength = 0;
 

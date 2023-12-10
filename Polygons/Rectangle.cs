@@ -1,6 +1,6 @@
 ﻿namespace Polygons
 {
-    public class Rectangle : Polygon
+    public sealed class Rectangle : Polygon
     {
         private double _length = 0;
         private double _width = 0;
